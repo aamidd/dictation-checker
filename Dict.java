@@ -19,7 +19,7 @@ public class Dict {
     public void listWrongWords(String sentence) {
         String[] array = sentence.split(" ");
         for (String s : array) {
-            if (Collections.binarySearch(dict, s) < 0)
+            if (!isCorrect(s)) 
                 System.out.printf("\u001B[31m%s\u001B[m ", s);
             else
                 System.out.printf("%s ", s);
@@ -27,7 +27,7 @@ public class Dict {
         System.out.println();
     }
 
-    public boolean checkWord(String word) {
+    public boolean isCorrect(String word) {
         return Collections.binarySearch(dict, word) >= 0;
     }
 
