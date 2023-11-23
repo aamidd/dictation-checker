@@ -34,7 +34,7 @@ public class Dict {
     private ArrayList<String> setDict() {
         ArrayList<String> words = new ArrayList<>();
         try {
-            Scanner scan = new Scanner(Paths.get("/usr/share/dict/words"));
+            Scanner scan = new Scanner(Paths.get("words.txt"));
             while (scan.hasNext())
                 words.add(scan.next());
         } catch (IOException e) {
